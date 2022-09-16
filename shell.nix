@@ -19,10 +19,8 @@ in
   ];
 
   shellHook = ''
-    alias dcd="docker compose down"
-    alias docker-compose="docker compose"
     export PIP_PREFIX="$(pwd)/_build/pip_packages"
-    export PYTHONPATH="$(pwd)/_build/pip_packages/lib/python3.10/site-packages:$PYTHONPATH"
+    export PYTHONPATH="$(pwd)/_build/pip_packages/lib/python3.10/site-packages:$(pwd)/_build/pip_packages/local/lib/python3.10/dist-packages:$PYTHONPATH"
     export PATH="$(pwd)/_build/pip_packages/bin:$PATH"
     # PYTHONPATH=${python-with-my-packages}/${python-with-my-packages.sitePackages}
   '';
