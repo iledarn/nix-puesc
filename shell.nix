@@ -20,9 +20,11 @@ in
   ];
 
   shellHook = ''
-    export PIP_PREFIX="$(pwd)/_build/pip_packages"
-    export PYTHONPATH="$(pwd)/_build/pip_packages/lib/python3.10/site-packages:$(pwd)/_build/pip_packages/local/lib/python3.10/dist-packages:$PYTHONPATH"
-    export PATH="$(pwd)/_build/pip_packages/bin:$PATH"
-    # PYTHONPATH=${python-with-my-packages}/${python-with-my-packages.sitePackages}
+    set -a
+    PIP_PREFIX="$(pwd)/_build/pip_packages"
+    PYTHONPATH="$(pwd)/_build/pip_packages/lib/python3.10/site-packages:$(pwd)/_build/pip_packages/local/lib/python3.10/dist-packages:$PYTHONPATH"
+    PATH="$(pwd)/_build/pip_packages/bin:$PATH"
+    . "$(pwd)/.env"
+    set +a
   '';
 }
