@@ -1,0 +1,4 @@
+zeep.transports: Loading remote data from: https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?wsdl
+zeep.transports: Loading remote data from: https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?xsd=WS_CHANNEL.xsd
+DEBUG:zeep.transports:Loading remote data from: https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?wsdl
+DEBUG:zeep.transports:Loading remote data from: https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?xsd=WS_CHANNEL.xsd

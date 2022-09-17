@@ -1,0 +1,24 @@
+DEBUG:suds.transport.http:opening (https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?wsdl)
+DEBUG:suds.transport.http:opening (https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?xsd=WS_CHANNEL.xsd)
+
+>>> suds_client.service.AcceptDocument()
+DEBUG:suds.transport.http:sending:
+URL:https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort
+HEADERS: {'Content-Type': 'text/xml; charset=utf-8', 'SOAPAction': '"AcceptDocument"', 'Content-type': 'text/xml; charset=utf-8', 'Soapaction': '"AcceptDocument"'}
+MESSAGE:
+b'<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0"><SOAP-ENV:Header/><ns0:Body><ns1:AcceptDocumentRequest><ns1:document/></ns1:AcceptDocumentRequest></ns0:Body></SOAP-ENV:Envelope>'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/inasyrov/nix-puesc/_build/pip_packages/lib/python3.10/site-packages/suds/client.py", line 559, in __call__
+    return client.invoke(args, kwargs)
+  File "/home/inasyrov/nix-puesc/_build/pip_packages/lib/python3.10/site-packages/suds/client.py", line 618, in invoke
+    result = self.send(soapenv)
+  File "/home/inasyrov/nix-puesc/_build/pip_packages/lib/python3.10/site-packages/suds/client.py", line 664, in send
+    result = self.failed(binding, e)
+  File "/home/inasyrov/nix-puesc/_build/pip_packages/lib/python3.10/site-packages/suds/client.py", line 720, in failed
+    r, p = binding.get_fault(reply)
+  File "/home/inasyrov/nix-puesc/_build/pip_packages/lib/python3.10/site-packages/suds/bindings/binding.py", line 267, in get_fault
+    raise WebFault(p, faultroot)
+suds.WebFault: b"Server raised fault: 'A required header representing a Message Addressing Property is not present'"
+
+b"Server raised fault: 'A required header representing a Message Addressing Property is not present'"

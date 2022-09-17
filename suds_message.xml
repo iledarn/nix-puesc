@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0">
+  <SOAP-ENV:Header/>
+  <ns0:Body>
+    <ns1:AcceptDocumentRequest>
+      <ns1:document/>
+    </ns1:AcceptDocumentRequest>
+  </ns0:Body>
+</SOAP-ENV:Envelope>
