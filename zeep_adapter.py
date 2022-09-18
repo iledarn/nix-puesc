@@ -2,6 +2,7 @@ import datetime
 from lxml import etree
 import base64
 import os
+import hashlib
 import logging.config
 
 from zeep import Client as ZeepClient
@@ -10,6 +11,7 @@ from zeep.plugins import HistoryPlugin
 from zeep.wsse.username import UsernameToken
 from zeep.wsse.signature import Signature
 from zeep.wsse.utils import WSU
+from zeep.wsse import utils
 
 
 logging.config.dictConfig(
@@ -51,7 +53,32 @@ ws_addressing = WsAddressingPlugin()
 # ]
 # timestamp_token.extend(timestamp_elements)
 
-user_name_token = UsernameToken(username, password, use_digest=True)
+
+class CustomUsernameToken(UsernameToken):
+    def _create_password_digest(self):
+        nonce = os.urandom(16)
+        timestamp = utils.get_timestamp(self.created, self.zulu_timestamp)
+        password = self.password.encode("utf-8")
+
+        digest = base64.b64encode(
+            hashlib.sha1(
+                nonce + timestamp.encode("utf-8") + base64.b64encode(hashlib.sha1(password).digest())
+            ).digest()
+        ).decode("ascii")
+
+        return [
+            utils.WSSE.Password(
+                digest, Type="%s#PasswordDigest" % self.username_token_profile_ns
+            ),
+            utils.WSSE.Nonce(
+                base64.b64encode(nonce).decode("utf-8"),
+                EncodingType="%s#Base64Binary" % self.soap_message_secutity_ns,
+            ),
+            utils.WSU.Created(timestamp),
+        ]
+
+
+user_name_token = CustomUsernameToken(username, password, use_digest=True)
 # user_name_token = UsernameToken(username, password, use_digest=True, timestamp_token=timestamp_token)
 
 zeep_client = ZeepClient(
