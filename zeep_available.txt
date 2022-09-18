@@ -1,0 +1,94 @@
+[nix-shell:~/nix-puesc]$ python -mzeep https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?wsdl
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0
+     ns1: http://www.mf.gov.pl/schematy/SISC/WsChannel/2014/01_v2_0
+
+Global elements:
+     ns1:document(ns1:documentType)
+     ns1:result(ns1:resultType)
+     ns0:AcceptDocumentRequest(document: ns1:documentType)
+     ns0:AcceptDocumentResponse(result: ns1:resultType)
+     ns0:GetDocumentsRequest(idSiscROF: ns1:idSISC, idSiscROP: ns1:idSISC, idSiscP: ns1:idSISC, sysRef: xsd:string, idWysylki: xsd:string, idDocSysZew: xsd:string, idSprawy: xsd:string, pobrany: xsd:string, dataOd: xsd:date, dataDo: xsd:date, korelacjaSysref: xsd:string, allEmployees: xsd:boolean, targetSystem: ns1:systemType)
+     ns0:GetDocumentsResponse(documentsCount: xsd:long, document: ns1:documentType[], documentsInfo: xsd:string)
+     ns0:GetNextDocumentRequest(targetSystem: ns1:systemType)
+     ns0:GetNextDocumentResponse(document: ns1:documentType, hasNext: xsd:boolean)
+     ns0:GetNextDocumentSiscRequest(idSiscROF: ns1:idSISC, idSiscROP: ns1:idSISC, idSiscP: ns1:idSISC, allEmployees: xsd:boolean, targetSystem: ns1:systemType)
+     ns0:businessErrorFault(error: ns1:businessErrorType)
+     ns0:techErrorFault(error: ns1:techErrorType)
+
+
+Global types:
+     xsd:anyType
+     ns1:attachmentsType(content: ns1:contentType[])
+     ns1:businessErrorType(errorCode: xsd:string, errorDesc: xsd:string)
+     ns1:contentType(xsd:base64Binary, filename: xsd:string, mime: ns1:mimeType)
+     ns1:documentType(content: ns1:contentType, dispatchId: xsd:string, caseId: xsd:string, personSISC: ns1:idSISC, middleSISC: ns1:idSISC, endSISC: ns1:idSISC, attachments: ns1:attachmentsType, targetSystems: ns1:targetSystemsType, emailReplyList: ns1:emailReplyListType)
+     ns1:emailReplyListType(email: xsd:string[])
+     ns1:errorType(errorCode: xsd:string, errorDesc: xsd:string)
+     ns1:idSISC
+     ns1:mimeType
+     ns1:resultType(sysRef: xsd:string)
+     ns1:systemType
+     ns1:targetSystemsType(system: ns1:systemType[])
+     ns1:techErrorType(errorCode: xsd:string, errorDesc: xsd:string)
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+
+Bindings:
+     Soap11Binding: {http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0}DocumentHandlingBind
+
+Service: DocumentHandlingSvc
+     Port: DocumentHandlingPort (Soap11Binding: {http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0}DocumentHandlingBind)
+         Operations:
+            AcceptDocument(document: ns1:documentType) -> result: ns1:resultType
+            GetDocuments(idSiscROF: ns1:idSISC, idSiscROP: ns1:idSISC, idSiscP: ns1:idSISC, sysRef: xsd:string, idWysylki: xsd:string, idDocSysZew: xsd:string, idSprawy: xsd:string, pobrany: xsd:string, dataOd: xsd:date, dataDo: xsd:date, korelacjaSysref: xsd:string, allEmployees: xsd:boolean, targetSystem: ns1:systemType) -> documentsCount: xsd:long, document: ns1:documentType[], documentsInfo: xsd:string
+            GetNextDocument(targetSystem: ns1:systemType) -> document: ns1:documentType, hasNext: xsd:boolean
+            GetNextDocumentSisc(idSiscROF: ns1:idSISC, idSiscROP: ns1:idSISC, idSiscP: ns1:idSISC, allEmployees: xsd:boolean, targetSystem: ns1:systemType) -> document: ns1:documentType, hasNext: xsd:boolean
+
+
+[nix-shell:~/nix-puesc]$
