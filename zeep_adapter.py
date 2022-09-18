@@ -129,9 +129,33 @@ tf_element = tf1_taxfree_doc.get_element(dtf_qname)
 tf_document = tf_element()
 
 dtf_type_qname = etree.QName("tftypes", "DokumentTAXFREE")
+
 document_taxfree_type = tf_types_taxfree_doc.get_type(dtf_type_qname)
+len(document_taxfree_type.elements)
+
 document_taxfree = document_taxfree_type()
-# element = zeep_client.get_element("ns1:document")
-# zeep_document = element()
-# taxfree_element = zeep_client.get_element("tf1:DokumentTaxFree")
-# document_taxfree = taxfree_element()
+document_taxfree.NrDokumentuTAXFREE = 123
+
+node = zeep_client.create_message(zeep_client.service, "AcceptDocument", zeep_document)
+envelope_tree = etree.ElementTree(node)
+envelope_tree.write("accept_document_body2.xml", pretty_print=True)
+
+f = open("accept_document_body1.xml", "w")
+f.write(etree.tostring(node, pretty_print=True, encoding="unicode"))
+f.close()
+
+
+
+
+
+
+
+seller_type_qname = etree.QName("tftypes", "TZDaneSprzedawcy")
+seller_type = tf_types_taxfree_doc.get_type(seller_type_qname)
+seller = seller_type()
+
+seller.Nazwa = "seller1"
+seller.AdresSprzedawcy = "address1"
+document_taxfree.DaneSprzedawcy = seller
+
+# document_taxfree_type.render(node, document_taxfree)
