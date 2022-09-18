@@ -1,3 +1,4 @@
+from pathlib import Path
 import datetime
 from lxml import etree
 import base64
@@ -117,10 +118,10 @@ from zeep.loader import load_external
 # tf_types_schema_doc = load_external(open(TFTypes_XSD_SCHEMA_FILE, "rb"), None)
 # tf_types_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf_types_schema_doc, f"file://{TFTypes_CONTAINER_DIR}")
 
-TF1_XSD_SCHEMA_FILE = "/home/inasyrov/PUESC/XSDtaxfree_v1.4/TF1.xsd"
+TF1_XSD_SCHEMA_FILE = Path().absolute() / "xsd_taxfree/TF1.xsd"
 TF1_CONTAINER_DIR = os.path.dirname(TF1_XSD_SCHEMA_FILE)
 tf1_schema_doc = load_external(open(TF1_XSD_SCHEMA_FILE, "rb"), None)
-tf1_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf1_schema_doc, f"file://{TF1_CONTAINER_DIR}")
+tf1_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf1_schema_doc, f"file://{TF1_CONTAINER_DIR}", target_namespace="tf")
 tf1_taxfree_doc.resolve()
 
 # element = zeep_client.get_element("ns1:document")

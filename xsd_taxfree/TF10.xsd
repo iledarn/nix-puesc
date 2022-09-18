@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:TFTypes="http://taxfree.gov.pl/tftypes/" xmlns:tns="http://taxfree.gov.pl/tf10" targetNamespace="http://taxfree.gov.pl/tf10" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.4" xml:lang="pl">
+	<xsd:import namespace="http://taxfree.gov.pl/tftypes/" schemaLocation="TFTypes.xsd"/>
+	<xsd:element name="KomunikatBledu">
+		<xsd:annotation>
+			<xsd:documentation>[TF.10] Komunikat błędu</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Identyfikator" type="TFTypes:TIdBledu" minOccurs="1" maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation>Identyfikator(Informacja identyfikująca komunikat) przyjmuje następujące wartości:
+- dla komunikatu TF.1 w jest w formacie:
+ TF.1|[NIP]-[ Numer własny dokumentu TAXFREE]|[data i czas wpływu komunikatu]
+- dla pozostałych komunikatów z nadanym UNS:
+ TF.3|[UNS]|[data i czas wpływu komunikatu]
+</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="KodBledu" type="TFTypes:TKodBledu" minOccurs="1" maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation>Kod błędu</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="OpisBledu" type="TFTypes:TOpisBledu" minOccurs="1" maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation>Pole tekstowe</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

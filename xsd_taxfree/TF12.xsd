@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:TFTypes="http://taxfree.gov.pl/tftypes/" xmlns:tns="http://taxfree.gov.pl/tf12" targetNamespace="http://taxfree.gov.pl/tf12" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.4" xml:lang="pl">
+	<xsd:import namespace="http://taxfree.gov.pl/tftypes/" schemaLocation="TFTypes.xsd"/>
+	<xsd:element name="ZapytanieUNS">
+		<xsd:annotation>
+			<xsd:documentation>[TF.12] Zapytanie o dokument TAX FREE z UNS </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="NIPSprzedawcy" type="TFTypes:TNrNIP" minOccurs="1" maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation>NIP Sprzedawcy</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NrDokumentuTAXFREE" type="TFTypes:TNrDokumentu" minOccurs="1" maxOccurs="1">
+					<xsd:annotation>
+						<xsd:documentation>Kolejny numer nadany w ramach jednej lub więcej serii, który w sposób jednoznaczny identyfikuje dokument</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
