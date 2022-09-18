@@ -102,9 +102,28 @@ zeep_document["content"] = content
 target_systems = factory.targetSystemsType()
 zeep_document["targetSystems"] = content
 
-zeep_client.service.AcceptDocument(zeep_document)
+# zeep_client.service.AcceptDocument(zeep_document)
 
 # f = open("accept_document.xml", "w")
 # for hist in [history.last_sent, history.last_received]:
 #     f.write(etree.tostring(hist["envelope"], encoding="unicode"))
 # f.close()
+
+
+from zeep.loader import load_external
+
+# TFTypes_XSD_SCHEMA_FILE = "/home/inasyrov/PUESC/XSDtaxfree_v1.4/TFTypes.xsd"
+# TFTypes_CONTAINER_DIR = os.path.dirname(TFTypes_XSD_SCHEMA_FILE)
+# tf_types_schema_doc = load_external(open(TFTypes_XSD_SCHEMA_FILE, "rb"), None)
+# tf_types_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf_types_schema_doc, f"file://{TFTypes_CONTAINER_DIR}")
+
+TF1_XSD_SCHEMA_FILE = "/home/inasyrov/PUESC/XSDtaxfree_v1.4/TF1.xsd"
+TF1_CONTAINER_DIR = os.path.dirname(TF1_XSD_SCHEMA_FILE)
+tf1_schema_doc = load_external(open(TF1_XSD_SCHEMA_FILE, "rb"), None)
+tf1_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf1_schema_doc, f"file://{TF1_CONTAINER_DIR}")
+tf1_taxfree_doc.resolve()
+
+# element = zeep_client.get_element("ns1:document")
+# zeep_document = element()
+# taxfree_element = zeep_client.get_element("tftypes:DokumentTaxFree")
+# document_taxfree = taxfree_element()
