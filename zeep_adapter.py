@@ -41,15 +41,15 @@ test_url = "https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?wsdl"
 prod_url = "https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort?wsdl"
 
 history = HistoryPlugin()
+
 ws_addressing = WsAddressingPlugin()
 
-password_digest = "123"
-today_datetime = datetime.datetime.today()
-timestamp_token = WSU.Timestamp()
-timestamp_elements = [
-    WSU.Created(today_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")),
-]
-timestamp_token.extend(timestamp_elements)
+# today_datetime = datetime.datetime.today()
+# timestamp_token = WSU.Timestamp()
+# timestamp_elements = [
+#     WSU.Created(today_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")),
+# ]
+# timestamp_token.extend(timestamp_elements)
 
 user_name_token = UsernameToken(username, password, use_digest=True)
 # user_name_token = UsernameToken(username, password, use_digest=True, timestamp_token=timestamp_token)
