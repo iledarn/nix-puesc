@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:TFTypes="http://taxfree.gov.pl/tftypes/" xmlns:tns="http://taxfree.gov.pl/tf1" targetNamespace="http://taxfree.gov.pl/tf1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.4" xml:lang="pl">
-    <xsd:import namespace="http://taxfree.gov.pl/tftypes/" schemaLocation="TFTypes.xsd"/>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:TFTypes="tftypes" xmlns:tns="tf1" targetNamespace="tf1" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.4" xml:lang="pl">
+    <xsd:import namespace="tftypes" schemaLocation="TFTypes.xsd"/>
     <xsd:element name="DokumentTaxFree">
         <xsd:annotation>
             <xsd:documentation>[TF.1] Wystawienie elektronicznego dokumentu TAX FREE</xsd:documentation>

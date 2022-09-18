@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://taxfree.gov.pl/tftypes/" targetNamespace="http://taxfree.gov.pl/tftypes/" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.4" xml:lang="pl">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="tftypes" targetNamespace="tftypes" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.4" xml:lang="pl">
     <!--#####################################################################################################################################################-->
     <!-- Typy proste -->
     <xsd:simpleType name="TData" id="TData">

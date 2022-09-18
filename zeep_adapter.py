@@ -101,7 +101,7 @@ content = factory.contentType(
 )
 zeep_document["content"] = content
 target_systems = factory.targetSystemsType()
-zeep_document["targetSystems"] = content
+zeep_document["targetSystems"] = content  # error here?
 
 # zeep_client.service.AcceptDocument(zeep_document)
 
@@ -113,10 +113,10 @@ zeep_document["targetSystems"] = content
 
 from zeep.loader import load_external
 
-# TFTypes_XSD_SCHEMA_FILE = "/home/inasyrov/PUESC/XSDtaxfree_v1.4/TFTypes.xsd"
-# TFTypes_CONTAINER_DIR = os.path.dirname(TFTypes_XSD_SCHEMA_FILE)
-# tf_types_schema_doc = load_external(open(TFTypes_XSD_SCHEMA_FILE, "rb"), None)
-# tf_types_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf_types_schema_doc, f"file://{TFTypes_CONTAINER_DIR}")
+TFTypes_XSD_SCHEMA_FILE = Path().absolute() / "TFTypes.xsd"
+TFTypes_CONTAINER_DIR = os.path.dirname(TFTypes_XSD_SCHEMA_FILE)
+tf_types_schema_doc = load_external(open(TFTypes_XSD_SCHEMA_FILE, "rb"), None)
+tf_types_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf_types_schema_doc, f"file://{TFTypes_CONTAINER_DIR}")
 
 TF1_XSD_SCHEMA_FILE = Path().absolute() / "xsd_taxfree/TF1.xsd"
 TF1_CONTAINER_DIR = os.path.dirname(TF1_XSD_SCHEMA_FILE)
@@ -124,7 +124,14 @@ tf1_schema_doc = load_external(open(TF1_XSD_SCHEMA_FILE, "rb"), None)
 tf1_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf1_schema_doc, f"file://{TF1_CONTAINER_DIR}", target_namespace="tf")
 tf1_taxfree_doc.resolve()
 
+dtf_qname = etree.QName("tf1", "DokumentTaxFree")
+tf_element = tf1_taxfree_doc.get_element(dtf_qname)
+tf_document = tf_element()
+
+dtf_type_qname = etree.QName("tftypes", "DokumentTAXFREE")
+document_taxfree_type = tf_types_taxfree_doc.get_type(dtf_type_qname)
+document_taxfree = document_taxfree_type()
 # element = zeep_client.get_element("ns1:document")
 # zeep_document = element()
-# taxfree_element = zeep_client.get_element("tftypes:DokumentTaxFree")
+# taxfree_element = zeep_client.get_element("tf1:DokumentTaxFree")
 # document_taxfree = taxfree_element()
