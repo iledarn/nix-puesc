@@ -202,4 +202,12 @@ ZwrotuVAT.FormaZwrotu = "fdfd"
 ZwrotuVAT.NumerRachunku = "345345"
 document_taxfree.FormaZwrotuVAT = ZwrotuVAT
 
-#document_taxfree_type.render(node, document_taxfree)
+Fiskalne_type_qname = etree.QName("tftypes", "TZDaneFiskalne")
+Fiskalne_type = tf_types_taxfree_doc.get_type(Fiskalne_type_qname)
+Fiskalne = Fiskalne_type() 
+Fiskalne.NrKasy = "1234"
+Fiskalne.NrParagonu = "326453"
+Fiskalne.DataSprzedazy = "02/02/20"
+document_taxfree.DaneFiskalne = Fiskalne
+
+document_taxfree_type.render(node, document_taxfree)
