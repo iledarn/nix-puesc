@@ -144,77 +144,18 @@ f = open("accept_document_body1.xml", "w")
 f.write(etree.tostring(node, pretty_print=True, encoding="unicode"))
 f.close()
 
+
+
+
+
+
+
 seller_type_qname = etree.QName("tftypes", "TZDaneSprzedawcy")
 seller_type = tf_types_taxfree_doc.get_type(seller_type_qname)
 seller = seller_type()
 
 seller.Nazwa = "seller1"
-seller.NIPSprzedawcy = "dfdf"
+seller.AdresSprzedawcy = "address1"
 document_taxfree.DaneSprzedawcy = seller
 
-adres_type_qname = etree.QName("tftypes", "TZAdres")
-address_type = tf_types_taxfree_doc.get_type(adres_type_qname)
-address = address_type()
-address.Miejscowosc = "Ufa"
-address.Ulica = "Mira"
-address.NrDomu = "3"
-address.NrLokalu = "2"
-address.KodPocztowy = "450000"
-address.Poczta = "dfdgf"
-document_taxfree.DaneSprzedawcy.AdresSprzedawcy = address
-
-podroznego_type_qname = etree.QName("tftypes", "TZPodrozny")
-podroznego_type = tf_types_taxfree_doc.get_type(podroznego_type_qname)
-podroznego = podroznego_type()
-podroznego.Imie = "345"
-podroznego.Nazwisko = "ddfd"
-podroznego.DataUrodzenia = "03/00/22"
-podroznego.NrPaszportu = "5555"
-podroznego.KrajPaszportu = "RUS"
-document_taxfree.DanePodroznego = podroznego
-
-towar_type_qname = etree.QName("tftypes", "TZDaneTowaru")
-towar_type = tf_types_taxfree_doc.get_type(towar_type_qname)
-towar = towar_type() 
-document_taxfree.DaneTowaru = [towar]
-towar.Lp ="fdf"
-towar.NazwaTowaru = "apple" 
-towar.MiaraIlosci = "fsdfs"
-towar.Ilosc = "sdfsd"
-towar.CenaNetto = "2342"
-towar.WartoscNetto = "242"
-towar.StawkaVAT = "23423"
-towar.KwotaVAT = "1fsd"
-towar.WartoscBrutto = "fdsf"
-
-doc_type_qname = etree.QName("tftypes", "TZWartoscDokumentu")
-doc_type = tf_types_taxfree_doc.get_type(doc_type_qname)
-doc = doc_type() 
-doc.Waluta = "USD"
-doc.RazemKwotaVAT = "dfd"
-doc.RazemWartoscBrutto = "34534"
-document_taxfree.WartoscDokumentuTAXFREE = doc
-
-ZwrotuVAT_type_qname = etree.QName("tftypes", "TZFormaZwrotuVAT")
-ZwrotuVAT_type = tf_types_taxfree_doc.get_type(ZwrotuVAT_type_qname)
-ZwrotuVAT = ZwrotuVAT_type() 
-ZwrotuVAT.FormaZwrotu = "fdfd"
-ZwrotuVAT.NumerRachunku = "345345"
-document_taxfree.FormaZwrotuVAT = ZwrotuVAT
-
-Fiskalne_type_qname = etree.QName("tftypes", "TZDaneFiskalne")
-Fiskalne_type = tf_types_taxfree_doc.get_type(Fiskalne_type_qname)
-Fiskalne = Fiskalne_type() 
-Fiskalne.NrKasy = "1234"
-Fiskalne.NrParagonu = "326453"
-Fiskalne.DataSprzedazy = "02/02/20"
-document_taxfree.DaneFiskalne = Fiskalne
-
-Kaser_type_qname = etree.QName("tftypes", "TZKasjer")
-Kaser_type = tf_types_taxfree_doc.get_type(Kaser_type_qname)
-Kaser = Kaser_type()
-Kaser.KasjerIDSISC = "sd352363"
-Kaser.Imie = "fsdf"
-Kaser.Nazwisko = "fsdf"
-document_taxfree.Kasjer = Kaser
-document_taxfree_type.render(node, document_taxfree)
+# document_taxfree_type.render(node, document_taxfree)
