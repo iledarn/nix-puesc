@@ -144,18 +144,34 @@ f = open("accept_document_body1.xml", "w")
 f.write(etree.tostring(node, pretty_print=True, encoding="unicode"))
 f.close()
 
-
-
-
-
-
-
 seller_type_qname = etree.QName("tftypes", "TZDaneSprzedawcy")
 seller_type = tf_types_taxfree_doc.get_type(seller_type_qname)
 seller = seller_type()
 
 seller.Nazwa = "seller1"
 seller.AdresSprzedawcy = "address1"
+seller.NIPSprzedawcy = "dfdf"
 document_taxfree.DaneSprzedawcy = seller
 
-# document_taxfree_type.render(node, document_taxfree)
+adres_type_qname = etree.QName("tftypes", "TZAdres")
+address_type = tf_types_taxfree_doc.get_type(adres_type_qname)
+address = address_type()
+address.Miejscowosc = "Ufa"
+address.Ulica = "Mira"
+address.NrDomu = "3"
+address.NrLokalu = "2"
+address.KodPocztowy = "450000"
+address.Poczta = "dfdgf"
+document_taxfree.DaneSprzedawcy.AdresSprzedawcy = address
+
+podroznego_type_qname = etree.QName("tftypes", "TZPodrozny")
+podroznego_type = tf_types_taxfree_doc.get_type(podroznego_type_qname)
+podroznego = podroznego_type()
+podroznego.Imie = "345"
+podroznego.Nazwisko = "ddfd"
+podroznego.DataUrodzenia = "03/00/22"
+podroznego.NrPaszportu = "5555"
+podroznego.KrajPaszportu = "RUS"
+document_taxfree.DanePodroznego = podroznego
+
+document_taxfree_type.render(node, document_taxfree)
