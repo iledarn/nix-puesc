@@ -187,4 +187,13 @@ towar.StawkaVAT = "23423"
 towar.KwotaVAT = "1fsd"
 towar.WartoscBrutto = "fdsf"
 
+doc_type_qname = etree.QName("tftypes", "TZWartoscDokumentu")
+doc_type = tf_types_taxfree_doc.get_type(doc_type_qname)
+doc = doc_type() 
+doc.Waluta = "USD"
+doc.RazemKwotaVAT = "dfd"
+doc.RazemWartoscBrutto = "34534"
+document_taxfree.WartoscDokumentuTAXFREE = doc
+
+
 document_taxfree_type.render(node, document_taxfree)
