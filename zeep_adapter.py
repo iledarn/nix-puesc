@@ -210,4 +210,11 @@ Fiskalne.NrParagonu = "326453"
 Fiskalne.DataSprzedazy = "02/02/20"
 document_taxfree.DaneFiskalne = Fiskalne
 
+Kaser_type_qname = etree.QName("tftypes", "TZKasjer")
+Kaser_type = tf_types_taxfree_doc.get_type(Kaser_type_qname)
+Kaser = Kaser_type()
+Kaser.KasjerIDSISC = "sd352363"
+Kaser.Imie = "fsdf"
+Kaser.Nazwisko = "fsdf"
+document_taxfree.Kasjer = Kaser
 document_taxfree_type.render(node, document_taxfree)
