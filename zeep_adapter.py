@@ -149,7 +149,6 @@ seller_type = tf_types_taxfree_doc.get_type(seller_type_qname)
 seller = seller_type()
 
 seller.Nazwa = "seller1"
-seller.AdresSprzedawcy = "address1"
 seller.NIPSprzedawcy = "dfdf"
 document_taxfree.DaneSprzedawcy = seller
 
