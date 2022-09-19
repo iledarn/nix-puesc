@@ -173,4 +173,18 @@ podroznego.NrPaszportu = "5555"
 podroznego.KrajPaszportu = "RUS"
 document_taxfree.DanePodroznego = podroznego
 
+towar_type_qname = etree.QName("tftypes", "TZDaneTowaru")
+towar_type = tf_types_taxfree_doc.get_type(towar_type_qname)
+towar = towar_type() 
+document_taxfree.DaneTowaru = [towar]
+towar.Lp ="fdf"
+towar.NazwaTowaru = "apple" 
+towar.MiaraIlosci = "fsdfs"
+towar.Ilosc = "sdfsd"
+towar.CenaNetto = "2342"
+towar.WartoscNetto = "242"
+towar.StawkaVAT = "23423"
+towar.KwotaVAT = "1fsd"
+towar.WartoscBrutto = "fdsf"
+
 document_taxfree_type.render(node, document_taxfree)
