@@ -195,5 +195,11 @@ doc.RazemKwotaVAT = "dfd"
 doc.RazemWartoscBrutto = "34534"
 document_taxfree.WartoscDokumentuTAXFREE = doc
 
+ZwrotuVAT_type_qname = etree.QName("tftypes", "TZFormaZwrotuVAT")
+ZwrotuVAT_type = tf_types_taxfree_doc.get_type(ZwrotuVAT_type_qname)
+ZwrotuVAT = ZwrotuVAT_type() 
+ZwrotuVAT.FormaZwrotu = "fdfd"
+ZwrotuVAT.NumerRachunku = "345345"
+document_taxfree.FormaZwrotuVAT = ZwrotuVAT
 
-document_taxfree_type.render(node, document_taxfree)
+#document_taxfree_type.render(node, document_taxfree)
