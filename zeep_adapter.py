@@ -63,7 +63,9 @@ class CustomUsernameToken(UsernameToken):
 
         digest = base64.b64encode(
             hashlib.sha1(
-                nonce + timestamp.encode("utf-8") + base64.b64encode(hashlib.sha1(password).digest())
+                nonce
+                + timestamp.encode("utf-8")
+                + base64.b64encode(hashlib.sha1(password).digest())
             ).digest()
         ).decode("ascii")
 
@@ -100,8 +102,10 @@ content = factory.contentType(
     data_base64_bytes, filename="taxfree.xml", mime="application/xml"
 )
 zeep_document["content"] = content
+system_type = factory.systemType("TAX FREE")
 target_systems = factory.targetSystemsType()
-zeep_document["targetSystems"] = content  # error here?
+target_systems.system = [system_type]
+zeep_document["targetSystems"] = target_systems  # error here?
 
 # zeep_client.service.AcceptDocument(zeep_document)
 
@@ -116,12 +120,16 @@ from zeep.loader import load_external
 TFTypes_XSD_SCHEMA_FILE = Path().absolute() / "TFTypes.xsd"
 TFTypes_CONTAINER_DIR = os.path.dirname(TFTypes_XSD_SCHEMA_FILE)
 tf_types_schema_doc = load_external(open(TFTypes_XSD_SCHEMA_FILE, "rb"), None)
-tf_types_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf_types_schema_doc, f"file://{TFTypes_CONTAINER_DIR}")
+tf_types_taxfree_doc = zeep_client.wsdl.types.create_new_document(
+    tf_types_schema_doc, f"file://{TFTypes_CONTAINER_DIR}"
+)
 
 TF1_XSD_SCHEMA_FILE = Path().absolute() / "xsd_taxfree/TF1.xsd"
 TF1_CONTAINER_DIR = os.path.dirname(TF1_XSD_SCHEMA_FILE)
 tf1_schema_doc = load_external(open(TF1_XSD_SCHEMA_FILE, "rb"), None)
-tf1_taxfree_doc = zeep_client.wsdl.types.create_new_document(tf1_schema_doc, f"file://{TF1_CONTAINER_DIR}", target_namespace="tf")
+tf1_taxfree_doc = zeep_client.wsdl.types.create_new_document(
+    tf1_schema_doc, f"file://{TF1_CONTAINER_DIR}", target_namespace="tf"
+)
 tf1_taxfree_doc.resolve()
 
 dtf_qname = etree.QName("tf1", "DokumentTaxFree")
@@ -175,10 +183,10 @@ document_taxfree.DanePodroznego = podroznego
 
 towar_type_qname = etree.QName("tftypes", "TZDaneTowaru")
 towar_type = tf_types_taxfree_doc.get_type(towar_type_qname)
-towar = towar_type() 
+towar = towar_type()
 document_taxfree.DaneTowaru = [towar]
-towar.Lp ="fdf"
-towar.NazwaTowaru = "apple" 
+towar.Lp = "fdf"
+towar.NazwaTowaru = "apple"
 towar.MiaraIlosci = "fsdfs"
 towar.Ilosc = "sdfsd"
 towar.CenaNetto = "2342"
@@ -189,7 +197,7 @@ towar.WartoscBrutto = "fdsf"
 
 doc_type_qname = etree.QName("tftypes", "TZWartoscDokumentu")
 doc_type = tf_types_taxfree_doc.get_type(doc_type_qname)
-doc = doc_type() 
+doc = doc_type()
 doc.Waluta = "USD"
 doc.RazemKwotaVAT = "dfd"
 doc.RazemWartoscBrutto = "34534"
@@ -197,14 +205,14 @@ document_taxfree.WartoscDokumentuTAXFREE = doc
 
 ZwrotuVAT_type_qname = etree.QName("tftypes", "TZFormaZwrotuVAT")
 ZwrotuVAT_type = tf_types_taxfree_doc.get_type(ZwrotuVAT_type_qname)
-ZwrotuVAT = ZwrotuVAT_type() 
+ZwrotuVAT = ZwrotuVAT_type()
 ZwrotuVAT.FormaZwrotu = "fdfd"
 ZwrotuVAT.NumerRachunku = "345345"
 document_taxfree.FormaZwrotuVAT = ZwrotuVAT
 
 Fiskalne_type_qname = etree.QName("tftypes", "TZDaneFiskalne")
 Fiskalne_type = tf_types_taxfree_doc.get_type(Fiskalne_type_qname)
-Fiskalne = Fiskalne_type() 
+Fiskalne = Fiskalne_type()
 Fiskalne.NrKasy = "1234"
 Fiskalne.NrParagonu = "326453"
 Fiskalne.DataSprzedazy = "02/02/20"
@@ -217,4 +225,21 @@ Kaser.KasjerIDSISC = "sd352363"
 Kaser.Imie = "fsdf"
 Kaser.Nazwisko = "fsdf"
 document_taxfree.Kasjer = Kaser
-document_taxfree_type.render(node, document_taxfree)
+
+rendered = document_taxfree_type.render(node, document_taxfree)
+f = open("accept_document_body1.xml", "w")
+f.write(etree.tostring(node, pretty_print=True, encoding="unicode"))
+f.close()
+
+test = open("tf1.xml", "rb")
+test_read = test.read()
+# test_read_bytes = test_read.encode('utf-8')
+test.close()
+# data_base64_bytes = base64.b64encode(test_read_bytes)
+data_base64_bytes = base64.b64encode(test_read)
+
+content = factory.contentType(
+    test_read, filename="taxfree.xml", mime="application/xml"
+)
+zeep_document["content"] = content
+zeep_client.service.AcceptDocument(zeep_document)

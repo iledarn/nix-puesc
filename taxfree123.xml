@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:DokumentTaxFree xmlns:tns="http://taxfree.gov.pl/tf1" xmlns:tns1="http://taxfree.gov.pl/tftypes/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://taxfree.gov.pl/tf1">
+  <ns2:NrDokumentuTAXFREE xmlns:ns2="tftypes">123</ns2:NrDokumentuTAXFREE>
+  <ns3:DaneSprzedawcy xmlns:ns3="tftypes">
+    <ns3:Nazwa>seller1</ns3:Nazwa>
+    <ns3:AdresSprzedawcy>
+      <ns3:Miejscowosc>Ufa</ns3:Miejscowosc>
+      <ns3:Ulica>Mira</ns3:Ulica>
+      <ns3:NrDomu>3</ns3:NrDomu>
+      <ns3:NrLokalu>2</ns3:NrLokalu>
+      <ns3:KodPocztowy>450000</ns3:KodPocztowy>
+      <ns3:Poczta>dfdgf</ns3:Poczta>
+    </ns3:AdresSprzedawcy>
+    <ns3:NIPSprzedawcy>dfdf</ns3:NIPSprzedawcy>
+  </ns3:DaneSprzedawcy>
+  <ns4:DanePodroznego xmlns:ns4="tftypes">
+    <ns4:Imie>345</ns4:Imie>
+    <ns4:Nazwisko>ddfd</ns4:Nazwisko>
+    <ns4:DataUrodzenia>03/00/22</ns4:DataUrodzenia>
+    <ns4:NrPaszportu>5555</ns4:NrPaszportu>
+    <ns4:KrajPaszportu>RUS</ns4:KrajPaszportu>
+  </ns4:DanePodroznego>
+  <ns5:DaneTowaru xmlns:ns5="tftypes">
+    <ns5:Lp>fdf</ns5:Lp>
+    <ns5:NazwaTowaru>apple</ns5:NazwaTowaru>
+    <ns5:MiaraIlosci>fsdfs</ns5:MiaraIlosci>
+    <ns5:Ilosc>sdfsd</ns5:Ilosc>
+    <ns5:CenaNetto>2342</ns5:CenaNetto>
+    <ns5:WartoscNetto>242</ns5:WartoscNetto>
+    <ns5:StawkaVAT>23423</ns5:StawkaVAT>
+    <ns5:KwotaVAT>1fsd</ns5:KwotaVAT>
+    <ns5:WartoscBrutto>fdsf</ns5:WartoscBrutto>
+  </ns5:DaneTowaru>
+  <ns6:WartoscDokumentuTAXFREE xmlns:ns6="tftypes">
+    <ns6:Waluta>USD</ns6:Waluta>
+    <ns6:RazemKwotaVAT>dfd</ns6:RazemKwotaVAT>
+    <ns6:RazemWartoscBrutto>34534</ns6:RazemWartoscBrutto>
+  </ns6:WartoscDokumentuTAXFREE>
+  <ns7:FormaZwrotuVAT xmlns:ns7="tftypes">
+    <ns7:FormaZwrotu>true</ns7:FormaZwrotu>
+    <ns7:NumerRachunku>345345</ns7:NumerRachunku>
+  </ns7:FormaZwrotuVAT>
+  <ns8:DaneFiskalne xmlns:ns8="tftypes">
+    <ns8:NrKasy>1234</ns8:NrKasy>
+    <ns8:NrParagonu>326453</ns8:NrParagonu>
+    <ns8:DataSprzedazy>02/02/20</ns8:DataSprzedazy>
+  </ns8:DaneFiskalne>
+  <ns9:Kasjer xmlns:ns9="tftypes">
+    <ns9:KasjerIDSISC>sd352363</ns9:KasjerIDSISC>
+    <ns9:Imie>fsdf</ns9:Imie>
+    <ns9:Nazwisko>fsdf</ns9:Nazwisko>
+  </ns9:Kasjer>
+  </tns:DokumentTAXFREE>
+</tns:DokumentTaxFree>
