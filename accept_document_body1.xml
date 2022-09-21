@@ -1,14 +1,14 @@
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
   <soap-env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
     <wsa:Action>AcceptDocument</wsa:Action>
-    <wsa:MessageID>urn:uuid:69d06dbc-1181-4471-9aa8-15ee6a535743</wsa:MessageID>
+    <wsa:MessageID>urn:uuid:f4ecdea6-c73c-4e40-9181-8d9128c83b47</wsa:MessageID>
     <wsa:To>https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort</wsa:To>
     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <wsse:UsernameToken>
         <wsse:Username>rtbtrt6@gmail.com</wsse:Username>
-        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">d2ZAUr297czW0GAUHwikmyqE4qw=</wsse:Password>
-        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">pDnGbRtRb9AG6/cJLGw3/A==</wsse:Nonce>
-        <wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2022-09-18T15:39:47+00:00</wsu:Created>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">BBkxdhAPpUrWMdIQDpAJ3avs4DY=</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">fadf0wTO0DOA2vDfkwyK0Q==</wsse:Nonce>
+        <wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2022-09-21T07:20:59+00:00</wsu:Created>
       </wsse:UsernameToken>
     </wsse:Security>
   </soap-env:Header>
@@ -16,8 +16,60 @@
     <ns0:AcceptDocumentRequest xmlns:ns0="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0">
       <ns1:document xmlns:ns1="http://www.mf.gov.pl/schematy/SISC/WsChannel/2014/01_v2_0">
         <ns1:content filename="taxfree.xml" mime="application/xml">YUdWc2JHOHNJSGR2Y214a0lRPT0=</ns1:content>
-        <ns1:targetSystems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" filename="taxfree.xml" mime="application/xml" xsi:type="ns1:contentType">YUdWc2JHOHNJSGR2Y214a0lRPT0=</ns1:targetSystems>
+        <ns1:targetSystems>
+          <ns1:system>TAX FREE</ns1:system>
+        </ns1:targetSystems>
       </ns1:document>
     </ns0:AcceptDocumentRequest>
   </soap-env:Body>
+  <ns2:NrDokumentuTAXFREE xmlns:ns2="tftypes">123</ns2:NrDokumentuTAXFREE>
+  <ns3:DaneSprzedawcy xmlns:ns3="tftypes">
+    <ns3:Nazwa>seller1</ns3:Nazwa>
+    <ns3:AdresSprzedawcy>
+      <ns3:Miejscowosc>Ufa</ns3:Miejscowosc>
+      <ns3:Ulica>Mira</ns3:Ulica>
+      <ns3:NrDomu>3</ns3:NrDomu>
+      <ns3:NrLokalu>2</ns3:NrLokalu>
+      <ns3:KodPocztowy>450000</ns3:KodPocztowy>
+      <ns3:Poczta>dfdgf</ns3:Poczta>
+    </ns3:AdresSprzedawcy>
+    <ns3:NIPSprzedawcy>dfdf</ns3:NIPSprzedawcy>
+  </ns3:DaneSprzedawcy>
+  <ns4:DanePodroznego xmlns:ns4="tftypes">
+    <ns4:Imie>345</ns4:Imie>
+    <ns4:Nazwisko>ddfd</ns4:Nazwisko>
+    <ns4:DataUrodzenia>03/00/22</ns4:DataUrodzenia>
+    <ns4:NrPaszportu>5555</ns4:NrPaszportu>
+    <ns4:KrajPaszportu>RUS</ns4:KrajPaszportu>
+  </ns4:DanePodroznego>
+  <ns5:DaneTowaru xmlns:ns5="tftypes">
+    <ns5:Lp>fdf</ns5:Lp>
+    <ns5:NazwaTowaru>apple</ns5:NazwaTowaru>
+    <ns5:MiaraIlosci>fsdfs</ns5:MiaraIlosci>
+    <ns5:Ilosc>sdfsd</ns5:Ilosc>
+    <ns5:CenaNetto>2342</ns5:CenaNetto>
+    <ns5:WartoscNetto>242</ns5:WartoscNetto>
+    <ns5:StawkaVAT>23423</ns5:StawkaVAT>
+    <ns5:KwotaVAT>1fsd</ns5:KwotaVAT>
+    <ns5:WartoscBrutto>fdsf</ns5:WartoscBrutto>
+  </ns5:DaneTowaru>
+  <ns6:WartoscDokumentuTAXFREE xmlns:ns6="tftypes">
+    <ns6:Waluta>USD</ns6:Waluta>
+    <ns6:RazemKwotaVAT>dfd</ns6:RazemKwotaVAT>
+    <ns6:RazemWartoscBrutto>34534</ns6:RazemWartoscBrutto>
+  </ns6:WartoscDokumentuTAXFREE>
+  <ns7:FormaZwrotuVAT xmlns:ns7="tftypes">
+    <ns7:FormaZwrotu>true</ns7:FormaZwrotu>
+    <ns7:NumerRachunku>345345</ns7:NumerRachunku>
+  </ns7:FormaZwrotuVAT>
+  <ns8:DaneFiskalne xmlns:ns8="tftypes">
+    <ns8:NrKasy>1234</ns8:NrKasy>
+    <ns8:NrParagonu>326453</ns8:NrParagonu>
+    <ns8:DataSprzedazy>02/02/20</ns8:DataSprzedazy>
+  </ns8:DaneFiskalne>
+  <ns9:Kasjer xmlns:ns9="tftypes">
+    <ns9:KasjerIDSISC>sd352363</ns9:KasjerIDSISC>
+    <ns9:Imie>fsdf</ns9:Imie>
+    <ns9:Nazwisko>fsdf</ns9:Nazwisko>
+  </ns9:Kasjer>
 </soap-env:Envelope>

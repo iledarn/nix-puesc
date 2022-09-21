@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <Action xmlns="http://www.w3.org/2005/08/addressing">http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0/DocumentHandlingPort/AcceptDocumentResponse</Action>
+    <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:2a22f0eb-e5bd-4a5b-af21-a6070ed65197</MessageID>
+    <To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+    <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:dd6bcb9a-a1e6-461c-979a-d42a788df542</RelatesTo>
+  </soap:Header>
+  <soap:Body>
+    <ns2:AcceptDocumentResponse xmlns="http://www.mf.gov.pl/schematy/SISC/WsChannel/2014/01_v2_0" xmlns:ns2="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0">
+      <result>
+        <sysRef>7643d830-2435-4df3-ad4f-1de8cfae8d80</sysRef>
+      </result>
+    </ns2:AcceptDocumentResponse>
+  </soap:Body>
+</soap:Envelope>

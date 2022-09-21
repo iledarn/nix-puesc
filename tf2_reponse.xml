@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <Action xmlns="http://www.w3.org/2005/08/addressing">http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0/DocumentHandlingPort/AcceptDocument/Fault/techErrorFault</Action>
+    <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:d0836bba-1474-4253-9266-430394c94876</MessageID>
+    <To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+    <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:99974526-6011-4ade-8d6a-81d2c0b0d136</RelatesTo>
+  </soap:Header>
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>Dopasowany schemat nie jest schematem wysy&#x142;ki</faultstring>
+      <detail>
+        <ns2:techErrorFault xmlns="http://www.mf.gov.pl/schematy/SISC/WsChannel/2014/01_v2_0" xmlns:ns2="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0">
+          <ns2:error>
+            <errorCode>E003</errorCode>
+            <errorDesc>Dopasowany schemat nie jest schematem wysy&#x142;ki</errorDesc>
+          </ns2:error>
+        </ns2:techErrorFault>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>

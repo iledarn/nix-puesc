@@ -5,7 +5,7 @@ import base64
 import os
 import hashlib
 import logging.config
-
+import zeep
 from zeep import Client as ZeepClient
 from zeep.wsa import WsAddressingPlugin
 from zeep.plugins import HistoryPlugin
@@ -231,7 +231,7 @@ f = open("accept_document_body1.xml", "w")
 f.write(etree.tostring(node, pretty_print=True, encoding="unicode"))
 f.close()
 
-test = open("tf1.xml", "rb")
+test = open("tf12.xml", "rb")
 test_read = test.read()
 # test_read_bytes = test_read.encode('utf-8')
 test.close()
@@ -243,3 +243,7 @@ content = factory.contentType(
 )
 zeep_document["content"] = content
 zeep_client.service.AcceptDocument(zeep_document)
+
+#zeep_client.service.GetDocuments(zeep_document)
+
+

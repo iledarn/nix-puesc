@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:KomunikatBledu xmlns:tns="http://taxfree.gov.pl/tf10" xmlns:tns1="http://taxfree.gov.pl/tftypes/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://taxfree.gov.pl/tf10">
+  <tns:Identyfikator>TF.3|21PL00TF000123456|2021-01-
+01T12:00:12</tns:Identyfikator>
+  <tns:KodBledu>T001</tns:KodBledu>
+  <tns:OpisBledu>Wystąpił błąd</tns:OpisBledu>
+</tns:KomunikatBledu>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<tns:ZapytanieDlugie xmlns:tns="http://taxfree.gov.pl/tf5" xmlns:tns1="http://taxfree.gov.pl/tftypes/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://taxfree.gov.pl/tf5">
+  <tns:NumerUNS>21PL00TF000123456</tns:NumerUNS>
+</tns:ZapytanieDlugie>

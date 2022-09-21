@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:StatusDlugi xmlns:tns="http://taxfree.gov.pl/tf6" xmlns:tns1="http://taxfree.gov.pl/tftypes/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://taxfree.gov.pl/tf6">
+  <tns:NumerUNS>21PL00TF000123456</tns:NumerUNS>
+  <tns:DataCzasNumeruUNS>2021-01-01T12:00:12</tns:DataCzasNumeruUNS>
+  <tns:StatusDokumentu>01</tns:StatusDokumentu>
+  <tns:DaneTowaruStatus>
+    <tns1:Lp>1</tns1:Lp>
+    <tns1:NazwaTowaru>Towar1</tns1:NazwaTowaru>
+    <tns1:MiaraIlosci>szt.</tns1:MiaraIlosci>
+    <tns1:Ilosc>1.0</tns1:Ilosc>
+    <tns1:CenaNetto>10.0</tns1:CenaNetto>
+    <tns1:WartoscNetto>10.0</tns1:WartoscNetto>
+    <tns1:StawkaVAT>23</tns1:StawkaVAT>
+    <tns1:KwotaVAT>2.30</tns1:KwotaVAT>
+    <tns1:WartoscBrutto>12.30</tns1:WartoscBrutto>
+    <tns1:StatusPozycji>01</tns1:StatusPozycji>
+  </tns:DaneTowaruStatus>
+  <tns:DaneTowaruStatus>
+    <tns1:Lp>1</tns1:Lp>
+    <tns1:NazwaTowaru>Towar2</tns1:NazwaTowaru>
+    <tns1:MiaraIlosci>szt.</tns1:MiaraIlosci>
+    <tns1:Ilosc>1.0</tns1:Ilosc>
+    <tns1:CenaNetto>10.0</tns1:CenaNetto>
+    <tns1:WartoscNetto>10.0</tns1:WartoscNetto>
+    <tns1:StawkaVAT>23</tns1:StawkaVAT>
+    <tns1:KwotaVAT>2.30</tns1:KwotaVAT>
+    <tns1:WartoscBrutto>12.30</tns1:WartoscBrutto>
+    <tns1:StatusPozycji>01</tns1:StatusPozycji>
+  </tns:DaneTowaruStatus>
+  <tns:WartoscDokumentuTAXFREE>
+    <tns1:Waluta>PLN</tns1:Waluta>
+    <tns1:RazemKwotaVAT>4.60</tns1:RazemKwotaVAT>
+    <tns1:RazemWartoscBrutto>24.60</tns1:RazemWartoscBrutto>
+  </tns:WartoscDokumentuTAXFREE>
+  <tns:DataWywozuTowarow>2021-01-02T12:00:00</tns:DataWywozuTowarow>
+  <tns:JednostkaOdprawy>310000</tns:JednostkaOdprawy>
+</tns:StatusDlugi>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:StatusKrotki xmlns:tns="http://taxfree.gov.pl/tf4" xmlns:tns1="http://taxfree.gov.pl/tftypes/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://taxfree.gov.pl/tf4">
+  <tns:NumerUNS>21PL00TF000123456</tns:NumerUNS>
+  <tns:DataCzasNumeruUNS>2021-01-01T12:00:12</tns:DataCzasNumeruUNS>
+  <tns:StatusDokumentu>01</tns:StatusDokumentu>
+  <tns:WartoscDokumentuTAXFREE>
+    <tns1:Waluta>PLN</tns1:Waluta>
+    <tns1:RazemKwotaVAT>4.60</tns1:RazemKwotaVAT>
+    <tns1:RazemWartoscBrutto>24.60</tns1:RazemWartoscBrutto>
+  </tns:WartoscDokumentuTAXFREE>
+  <tns:DataWywozuTowarow>2021-01-02T12:00:00</tns:DataWywozuTowarow>
+  <tns:JednostkaOdprawy>310000</tns:JednostkaOdprawy>
+</tns:StatusKrotki>

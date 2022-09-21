@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml version='1.0' encoding='utf-8'?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap-env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+    <wsa:Action>AcceptDocument</wsa:Action>
+    <wsa:MessageID>urn:uuid:6932a31c-0c91-450d-afa7-d6b98996cb10</wsa:MessageID>
+    <wsa:To>https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort</wsa:To>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsse:UsernameToken>
+        <wsse:Username>rtbtrt6@gmail.com</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">Kul215CrPZ1/R1dAfUX047zdZqQ=</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">DM5NWGqWeiKnQm8DB8sjVg==</wsse:Nonce>
+        <wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2022-09-21T06:31:17+00:00</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soap-env:Header>
+  <soap-env:Body>
+    <ns0:AcceptDocumentRequest xmlns:ns0="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0">
+      <ns1:document xmlns:ns1="http://www.mf.gov.pl/schematy/SISC/WsChannel/2014/01_v2_0">
+        <ns1:content filename="taxfree.xml" mime="application/xml">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHRuczpVbmlld2F6bmllbmllRG9rdW1lbnR1IHhtbG5zOnRucz0iaHR0cDovL3RheGZyZWUuZ292LnBsL3RmOSIKeG1sbnM6dG5zMT0iaHR0cDovL3RheGZyZWUuZ292LnBsL3RmdHlwZXMvIgp4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIgp4c2k6c2NoZW1hTG9jYXRpb249Imh0dHA6Ly90YXhmcmVlLmdvdi5wbC90ZjkiPgo8dG5zOk51bWVyVU5TPjIxUEwwMFRGMDAwMTIzNDU2PC90bnM6TnVtZXJVTlM+Cjx0bnM6UG93b2RVbmlld2F6bmllbmlhPlBvd8OzZCB1bmlld2HFvG5pZW5pYSBkb2t1bWVudHU8L3RuczpQb3dvZFVuaWV3YXpuaWVuaWE+CjwvdG5zOlVuaWV3YXpuaWVuaWVEb2t1bWVudHU+Cg==</ns1:content>
+        <ns1:targetSystems>
+          <ns1:system>TAX FREE</ns1:system>
+        </ns1:targetSystems>
+      </ns1:document>
+    </ns0:AcceptDocumentRequest>
+  </soap-env:Body>
+</soap-env:Envelope>
