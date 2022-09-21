@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:PotwierdzenieWywozu xmlns:tns="http://taxfree.gov.pl/tf11" xmlns:tns1="http://taxfree.gov.pl/tftypes/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://taxfree.gov.pl/tf11">
+  <tns:NumerUNS>21PL00TF000123456</tns:NumerUNS>
+  <tns:DataZwrotu>2021-01-20</tns:DataZwrotu>
+  <tns:KwotaZwrotu>4.60</tns:KwotaZwrotu>
+  <tns:PanstwoUE>PL</tns:PanstwoUE>
+  <tns:DataWywozu>2021-01-15</tns:DataWywozu>
+</tns:PotwierdzenieWywozu>
