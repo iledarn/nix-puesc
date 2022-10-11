@@ -1,14 +1,14 @@
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
   <soap-env:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
     <wsa:Action>AcceptDocument</wsa:Action>
-    <wsa:MessageID>urn:uuid:69d06dbc-1181-4471-9aa8-15ee6a535743</wsa:MessageID>
+    <wsa:MessageID>urn:uuid:623f9582-5ab7-40f9-96a5-e15739348f1a</wsa:MessageID>
     <wsa:To>https://te-ws.puesc.gov.pl/seap_wsChannel/DocumentHandlingPort</wsa:To>
     <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <wsse:UsernameToken>
-        <wsse:Username>rtbtrt6@gmail.com</wsse:Username>
-        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">d2ZAUr297czW0GAUHwikmyqE4qw=</wsse:Password>
-        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">pDnGbRtRb9AG6/cJLGw3/A==</wsse:Nonce>
-        <wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2022-09-18T15:39:47+00:00</wsu:Created>
+        <wsse:Username>rtbtrt5@gmail.com</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">evpTda32tZTuTXTpF1+wVdD1JqI=</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">S3C/ki1fQjYYHw5URDm84g==</wsse:Nonce>
+        <wsu:Created xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2022-10-11T12:38:51+00:00</wsu:Created>
       </wsse:UsernameToken>
     </wsse:Security>
   </soap-env:Header>
@@ -16,7 +16,9 @@
     <ns0:AcceptDocumentRequest xmlns:ns0="http://www.mf.gov.pl/uslugiBiznesowe/WsPull/Usluga/2014/01_v2_0">
       <ns1:document xmlns:ns1="http://www.mf.gov.pl/schematy/SISC/WsChannel/2014/01_v2_0">
         <ns1:content filename="taxfree.xml" mime="application/xml">YUdWc2JHOHNJSGR2Y214a0lRPT0=</ns1:content>
-        <ns1:targetSystems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" filename="taxfree.xml" mime="application/xml" xsi:type="ns1:contentType">YUdWc2JHOHNJSGR2Y214a0lRPT0=</ns1:targetSystems>
+        <ns1:targetSystems>
+          <ns1:system>TAX FREE</ns1:system>
+        </ns1:targetSystems>
       </ns1:document>
     </ns0:AcceptDocumentRequest>
   </soap-env:Body>

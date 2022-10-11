@@ -243,3 +243,5 @@ content = factory.contentType(
 )
 zeep_document["content"] = content
 zeep_client.service.AcceptDocument(zeep_document)
+
+# zeep_client.service.GetNextDocument(system_type)
